@@ -16,7 +16,7 @@ public class Move : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -24,13 +24,15 @@ public class Move : MonoBehaviour
     {
         //animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
         float horizontal = Input.GetAxis("Horizontal");
-        if(horizontal > 0)
+        if (horizontal > 0)
         {
             animator.SetFloat("Horizontal", 1f);
-        }else if(horizontal < 0)
+        }
+        else if (horizontal < 0)
         {
             animator.SetFloat("Horizontal", 1f);
-        }else if (horizontal == 0)
+        }
+        else if (horizontal == 0)
         {
             animator.SetFloat("Horizontal", 0f);
         }
@@ -38,7 +40,7 @@ public class Move : MonoBehaviour
         Jump();
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
         transform.position += movement * Time.deltaTime * moveSpeed;
-        
+
         /*if(Input.GetAxis("Horizontal") != 0 && !SoundManagerScript.audioSrc.isPlaying)
         {
             SoundManagerScript.PlaySound("runSound");
@@ -51,7 +53,8 @@ public class Move : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal") < 0 && facingRight)
         {
             flip();
-        }else if(Input.GetAxisRaw("Horizontal") > 0 && !facingRight)
+        }
+        else if (Input.GetAxisRaw("Horizontal") > 0 && !facingRight)
         {
             flip();
         }
@@ -97,14 +100,15 @@ public class Move : MonoBehaviour
             SoundManagerScript.PlaySound("obwarzanekEatSound");
             Destroy(obwarzanek.gameObject);
             Fire = FindObjectOfType<Fire>();
-            if(Fire.FireStamina < 70f)
+            if (Fire.FireStamina < 70f)
             {
                 Fire.FireStamina += 30f;
-            }else if(Fire.FireStamina >= 70f)
+            }
+            else if (Fire.FireStamina >= 70f)
             {
                 Fire.FireStamina = 100f;
             }
-            
+
         }
     }
 }

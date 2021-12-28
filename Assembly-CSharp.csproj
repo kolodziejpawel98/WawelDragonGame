@@ -57,11 +57,12 @@
     <Compile Include="Assets\Scripts\Move.cs" />
     <Compile Include="Assets\Scripts\FireStaminaScript.cs" />
     <Compile Include="Assets\Scripts\HealthBarScript.cs" />
+    <Compile Include="Assets\Scripts\Parallax.cs" />
     <Compile Include="Assets\Scripts\ObwarzanekAnimation.cs" />
     <Compile Include="Assets\Scripts\BetterJump.cs" />
     <Compile Include="Assets\Scripts\SoundManagerScript.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
-    <Compile Include="Assets\Scripts\Parallax.cs" />
+    <Compile Include="Assets\Scripts\EnemyKilling.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
