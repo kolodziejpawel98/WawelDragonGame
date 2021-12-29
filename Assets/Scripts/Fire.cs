@@ -7,6 +7,7 @@ public class Fire : MonoBehaviour
     public float FireStamina = 100f;
     public bool isVisible = false;
     public bool isCollisionWithEnemy = false;
+
     void Update()
     {
         gameObject.GetComponent<Renderer>().enabled = false;
@@ -21,11 +22,10 @@ public class Fire : MonoBehaviour
             SoundManagerScript.audioSrc.Stop();
         }
 
-        if (gameObject.GetComponent<Renderer>().enabled == true && isCollisionWithEnemy == true)
+        /*if (gameObject.GetComponent<Renderer>().enabled == true && isCollisionWithEnemy == true)
         {
             Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!!");
-        }
-        
+        }*/
     }
 
     void Firing()
