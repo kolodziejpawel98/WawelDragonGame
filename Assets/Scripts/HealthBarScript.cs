@@ -6,19 +6,17 @@ using UnityEngine.UI;
 public class HealthBarScript : MonoBehaviour
 {
     private Image HealthBar;
-    public float CurrentHealth;
-    private float MaxHealth = 100f;
-    Move Player;
+    public float CurrentHealth = 0f;
+    public float MaxHealth = 100f;
 
     private void Start()
     {
         HealthBar = GetComponent<Image>();
-        Player = FindObjectOfType<Move>();
     }
 
     private void Update()
     {
-        CurrentHealth = Player.Health;
+        CurrentHealth = BulletFlight.health;
         HealthBar.fillAmount = CurrentHealth / MaxHealth;
     }
 }

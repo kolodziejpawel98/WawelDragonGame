@@ -11,6 +11,7 @@ public class Move : MonoBehaviour
     public Animator animator;
     public bool isJumpingTick;
     bool facingRight = true;
+    public static Vector3 position;
     Fire Fire;
 
     // Start is called before the first frame update
@@ -22,6 +23,7 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        position = transform.position;
         //animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
         float horizontal = Input.GetAxis("Horizontal");
         if (horizontal > 0)

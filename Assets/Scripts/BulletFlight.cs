@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class BulletFlight : MonoBehaviour
 {
-    float bulletSpeed = 2f;
+    float bulletSpeed = 10f;
     Rigidbody2D rigidbody;
     Move playerTarget;
-    Vector2 moveDirection;    
+    Vector2 moveDirection;
+    public static float health = 100f;
     
     void Start()
     {
@@ -29,7 +30,16 @@ public class BulletFlight : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") == true)
         {
-            Debug.Log("TRAFIONY");
+            health -= 10;
+            if(health <= 0) { 
+                GameOver(); 
+            }
+            SoundManagerScript.PlaySound("punchSound");
         }
+    }
+
+    private void GameOver()
+    {
+        Debug.Log("GAMEOVER");
     }
 }
