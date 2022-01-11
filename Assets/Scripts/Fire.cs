@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Fire : MonoBehaviour
 {
-    public float FireStamina = 100f;
-    public bool isVisible = false;
-    public bool isCollisionWithEnemy = false;
+    public static float FireStamina = 100f;
+    public static bool isVisible = false;
+    public static bool isCollisionWithEnemy = false;
 
     void Update()
     {
@@ -21,16 +21,10 @@ public class Fire : MonoBehaviour
         {
             SoundManagerScript.audioSrc.Stop();
         }
-
-        /*if (gameObject.GetComponent<Renderer>().enabled == true && isCollisionWithEnemy == true)
-        {
-            Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!!");
-        }*/
     }
 
     void Firing()
     {
-        //Debug.Log("?>>>>>>>>>>>>>>>>> " + SoundManagerScript.audioSrc.isPlaying); idk czemu ale jak jest 0 fire staminy to jest true
         if (Input.GetKey(KeyCode.F))
         {
             gameObject.GetComponent<Renderer>().enabled = true;

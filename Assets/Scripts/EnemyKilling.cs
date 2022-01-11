@@ -6,21 +6,20 @@ using TMPro;
 public class EnemyKilling : MonoBehaviour
 {
     Fire fireScript;
-    public float health = 100f;
+    public float health = 100.0f;
     public TMP_Text healthText;
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        fireScript = GameObject.Find("Fire").GetComponent<Fire>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (fireScript.GetComponent<Renderer>().enabled == true && fireScript.isCollisionWithEnemy == true)
+        if (Fire.isVisible == true && Fire.isCollisionWithEnemy == true && Mathf.Abs(transform.position.x - Move.position.x) < 2.0f)
         {
-            if(health > 0)
+            if (health > 0.0f)
             {
                 Damage();
                 UpdateHealthText();
@@ -44,6 +43,6 @@ public class EnemyKilling : MonoBehaviour
 
     void UpdateHealthText()
     {
-        healthText.text = string.Format("{0:N2}", health);
+        healthText.text = string.Format("{0:N1}", health);
     }
 }

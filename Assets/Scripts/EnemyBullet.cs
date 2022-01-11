@@ -17,8 +17,8 @@ public class EnemyBullet : MonoBehaviour
     {
         fireRate = 1f;
         nextFire = Time.time;
-        player = GameObject.Find("Player");
-        enemy = GameObject.Find("Enemy");
+        //player = GameObject.Find("Player");
+        //enemy = GameObject.Find("Enemy");
     }
 
     // Update is called once per frame

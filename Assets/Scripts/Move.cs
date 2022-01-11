@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    public float Health = 100f;
     public float moveSpeed = 8f;
     public float jumpPower = 8f;
     public bool isGrounded = false;

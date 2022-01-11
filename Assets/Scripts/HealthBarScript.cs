@@ -16,7 +16,7 @@ public class HealthBarScript : MonoBehaviour
 
     private void Update()
     {
-        CurrentHealth = BulletFlight.health;
+        CurrentHealth = BulletFlight.playerHealth;
         HealthBar.fillAmount = CurrentHealth / MaxHealth;
     }
 }

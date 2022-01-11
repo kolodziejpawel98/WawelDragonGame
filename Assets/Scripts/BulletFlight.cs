@@ -8,7 +8,7 @@ public class BulletFlight : MonoBehaviour
     Rigidbody2D rigidbody;
     Move playerTarget;
     Vector2 moveDirection;
-    public static float health = 100f;
+    public static float playerHealth = 100f;
     
     void Start()
     {
@@ -30,8 +30,8 @@ public class BulletFlight : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") == true)
         {
-            health -= 10;
-            if(health <= 0) { 
+            playerHealth -= 10;
+            if(playerHealth <= 0) { 
                 GameOver(); 
             }
             SoundManagerScript.PlaySound("punchSound");
