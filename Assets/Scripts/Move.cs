@@ -12,6 +12,10 @@ public class Move : MonoBehaviour
     bool facingRight = true;
     public static Vector3 position;
     Fire Fire;
+    public static bool isPlayerDead = false;
+    public GameOverScreen gameOverScreen;
+    bool playSoundOnce = false;
+    public AudioSource backgroundMusic;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +26,18 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isPlayerDead)
+        {
+            if (!playSoundOnce)
+            {
+                backgroundMusic.Stop();
+                SoundManagerScript.PlaySound("gameOver");
+                playSoundOnce = true;
+            }
+            gameOverScreen.Setup();
+            Time.timeScale = 0; // = 1 aby wznowic
+        }
+
         position = transform.position;
         //animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
         float horizontal = Input.GetAxis("Horizontal");

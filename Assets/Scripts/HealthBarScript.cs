@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HealthBarScript : MonoBehaviour
 {
     private Image HealthBar;
-    public float CurrentHealth = 0f;
+    public float CurrentHealth;
     public float MaxHealth = 100f;
 
     private void Start()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManagerScript : MonoBehaviour
 {
-    public static AudioClip getObwarzanekSound, fireFlameSound, runSound, punchSound;
+    public static AudioClip getObwarzanekSound, fireFlameSound, runSound, punchSound, birdDying, gameOver;
     public static AudioSource audioSrc;
 
     // Start is called before the first frame update
@@ -14,6 +14,8 @@ public class SoundManagerScript : MonoBehaviour
         fireFlameSound = Resources.Load<AudioClip>("fireFlame");
         runSound = Resources.Load<AudioClip>("runSound");
         punchSound = Resources.Load<AudioClip>("punchSound");
+        birdDying= Resources.Load<AudioClip>("birdDyingSound");
+        gameOver= Resources.Load<AudioClip>("gameOver");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -40,6 +42,12 @@ public class SoundManagerScript : MonoBehaviour
                 break;
             case "punchSound":
                 audioSrc.PlayOneShot(punchSound);
+                break;
+            case "birdDying":
+                audioSrc.PlayOneShot(birdDying);
+                break;
+            case "gameOver":
+                audioSrc.PlayOneShot(gameOver);
                 break;
         }
     }

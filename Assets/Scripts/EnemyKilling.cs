@@ -23,6 +23,11 @@ public class EnemyKilling : MonoBehaviour
             {
                 Damage();
                 UpdateHealthText();
+
+                if(health < 2.0f)
+                {
+                    SoundManagerScript.PlaySound("birdDying");
+                }
             }
             else
             {
@@ -37,7 +42,7 @@ public class EnemyKilling : MonoBehaviour
     }
 
     void Death()
-    {
+    { 
         Destroy(gameObject);
     }
 

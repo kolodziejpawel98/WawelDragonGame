@@ -34,12 +34,13 @@ public class BulletFlight : MonoBehaviour
             if(playerHealth <= 0) { 
                 GameOver(); 
             }
+            CameraFollow.isPlayerHit = true;
             SoundManagerScript.PlaySound("punchSound");
         }
     }
 
     private void GameOver()
     {
-        Debug.Log("GAMEOVER");
+        Move.isPlayerDead = true;
     }
 }
