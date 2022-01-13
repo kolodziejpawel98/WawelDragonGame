@@ -18,6 +18,7 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (isPlayerHit)
         {
             playerHitGradient.SetActive(true);
