@@ -16,6 +16,8 @@ public class GameOverScreen : MonoBehaviour
         gameObject.SetActive(false);
         Move.isPlayerDead = false;
         Time.timeScale = 1;
+        BulletFlight.playerHealth = 100.0f;
+        Fire.FireStamina = 100.0f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
